@@ -1,0 +1,5 @@
+#auto: true
+destination: ../Website
+permalink: /:categories/:title
+url: http://geekup.org
+exclude: ['Rakefile']

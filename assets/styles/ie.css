@@ -1,0 +1,10 @@
+/* Version: 070410
+-------------------------------------------------- */
+/* hide from ie/mac \*/
+.clearfix,
+div#Content { height: 1%; }
+div#Branding { display: inline; }
+div#Content { display: inline; }
+div#Sidebar { clear: both; }
+div#Sidebar div#GeekR ul li { display: inline; }
+/* end import/hide */

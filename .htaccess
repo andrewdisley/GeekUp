@@ -1,0 +1,50 @@
+
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks
+	RewriteEngine On
+	RewriteBase /
+	RewriteCond %{REQUEST_URI} !^/robots\.txt$
+	RewriteCond %{HTTP_HOST} !^geekup\.org$ [NC]
+	RewriteRule ^(.*)$ http://geekup.org/$1 [R=301,L]
+</IfModule>
+
+
+<IfModule mod_expires.c>
+
+    ExpiresDefault "access plus 1 year"
+
+</IfModule>
+
+# Set expires header and Remove ETags
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)(\.gz)?$">
+Header set Expires "Thu, 15 Apr 2012 20:00:00 GMT"
+Header unset ETag
+FileETag None
+</FilesMatch>
+
+# Set cache-control header
+<FilesMatch "\.(ico|jpg|png|gif)(\.gz)?$">
+Header set Cache-Control "public"
+</FilesMatch>
+<FilesMatch "\.(js|css)(\.gz)?$">
+Header set Cache-Control "private"
+</FilesMatch>
+
+<IfModule mod_deflate.c>
+	#AddOutputFilterByType DEFLATE text/css text/html text/xml text/javascript application/xml application/x-javascript application/javascript
+	SetOutputFilter DEFLATE
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch ^Mozilla/4\.0[678] no-gzip
+	# MSIE masquerades as Netscape, but it is fine
+	# BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+	BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+	SetEnvIfNoCase Request_URI \
+	\.(?:gif|jpe?g|png)$ no-gzip dont-vary
+	Header append Vary User-Agent env=!dont-vary
+
+</IfModule>
+
+#ErrorDocument 404 404.html
+
+Order allow,deny
+Allow from all

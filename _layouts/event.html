@@ -10,10 +10,8 @@ section: events events-detail
 					<dd>{{ page.date | date: "%H:%M %A %B %d %Y" }}</dd>
 					<dt>Where</dt>
 					<dd>{{ page.location }}</dd>
-{% if page.description %}
 					<dt>Description</dt>
-					<dd>{{ page.description }}</dd>
-{% endif %}
+					<dd>{{ page.content }}</dd>
 {% if page.contact %}
 					<dt>Contact</dt>
 					<dd>{{ page.contact }}</dd>

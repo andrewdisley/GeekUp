@@ -4,7 +4,7 @@
 {% for post in site.categories.events reversed %}
 {% if post.categories contains 'upcoming' %}
 					<div class="vevent">
-						<h3><a href="{{ post.url }}"><strong>{{ post.title }} - {{ post.date | date: "%H:%M %a %b %d %Y" }}</strong> <span class="location">{{ post.location }}</span></a></h3>
+						<h3><a href="{{ post.url }}/"><strong>{{ post.title }} - {{ post.date | date: "%H:%M %a %b %d %Y" }}</strong> <span class="location">{{ post.location }}</span></a></h3>
 					</div>
 {% endif %}
 {% endfor %}

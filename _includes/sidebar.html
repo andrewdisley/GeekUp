@@ -1,13 +1,9 @@
 			<div id="Sidebar">
 				<div id="Events">
 					<h2><a href="/events/">Upcoming Events</a></h2>
-{% for post in site.categories.events reversed %}
-{% if post.upcomingevent %}
-					<div class="vevent">
+					{% for post in site.categories.events reversed %}{% if post.upcomingevent %}<div class="vevent">
 						<h3><a href="{{ post.url }}/"><strong>{{ post.title }} - {{ post.date | date: "%H:%M %a %b %d %Y" }}</strong> <span class="location">{{ post.location }}</span></a></h3>
-					</div>
-{% endif %}
-{% endfor %}
+					</div>{% endif %}{% endfor %}
 				</div>
 				<div id="GeekR">
 					<h2><a href="http://flickr.com/groups/geekup/" rel="external">geek<span>r</span></a></h2>

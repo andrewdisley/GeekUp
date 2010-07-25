@@ -1,5 +1,6 @@
 #auto: true
 destination: ../Website
 permalink: /:categories/:title
-url: http://geekup.org
-exclude: ['Rakefile']
+#url: http://geekup.org
+#assets_url: http://geekup.org
+exclude: ['Rakefile', 'capfile', 'capistrano', 'geekup.ics', 'README']

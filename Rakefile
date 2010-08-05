@@ -1,9 +1,12 @@
 task :default => :build
 
+def windows?
+  Config::CONFIG['host_os'] =~ /mswin/
+end
+
 desc 'Jekyll build'
 task :build do
   jekyll
-#  compress
 end
 
 desc 'Jekyll --auto'
@@ -16,12 +19,18 @@ task :server do
   jekyll('--server --auto')
 end
 
-desc 'Deploy to live'
+desc 'Deploy to live, replaces live server with _site'
 task :live do
-sh 'rsync -rtzhv --delete ../Website/ dhg:/home/sgeekup/sites/geekup.org/public/'
+  jekyll
+  sh 'rsync -rtzhv --delete ../Website/ dhg:/home/sgeekup/sites/geekup.org/public/'
 end
 
 def jekyll(opts = '')
-  sh 'rm -rf ../Website'
+  if windows?
+    sh 'rmdir /s /q _site'
+    sh 'mkdir _site'
+  elsif
+    sh 'rm -rf _site'
+  end
   sh 'jekyll ' + opts
 end

@@ -1,5 +1,5 @@
 #auto: true
-destination: ../Website
+destination: _site
 permalink: /:categories/:title
 #url: http://geekup.org
 #assets_url: http://geekup.org

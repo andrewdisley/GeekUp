@@ -22,7 +22,7 @@ end
 desc 'Deploy to live, replaces live server with _site'
 task :live do
   jekyll
-  sh 'rsync -rtzhv --delete ../Website/ dhg:/home/sgeekup/sites/geekup.org/public/'
+  sh 'rsync -rtzhv --delete _site dhg:/home/sgeekup/sites/geekup.org/public/'
 end
 
 def jekyll(opts = '')

@@ -3,9 +3,9 @@
 <html profile="http://gmpg.org/xfn/11" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>{{ page.title }}{% if page.section contains 'jobs-job' %} at {{ page.company }} in {{ page.location }}{% endif %}</title>
-		{% if page.meta_description %}<meta name="description" content="{{ page.meta_description }}">{% endif %}
-		{% if page.meta_keywords %}<meta name="keywords" content="{{ page.meta_keywords }}">{% endif %}
+		<title>{{ page.title }}{% if page.section contains 'jobs-job' %} at {{ page.company }} in {{ page.location }}{% endif %}</title>{% if page.meta_description %}
+		<meta name="description" content="{{ page.meta_description }}">{% endif %}{% if page.meta_keywords %}
+		<meta name="keywords" content="{{ page.meta_keywords }}">{% endif %}
 		<meta name="author" content="Andrew Disley, Simplified http://simplified.co.uk/">
 		<link href="/assets/styles/screen.css" media="screen,projection" rel="stylesheet" type="text/css">
 		<!--[if lte IE 7]><link href="/assets/styles/ie.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->

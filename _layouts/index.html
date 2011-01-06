@@ -7,25 +7,24 @@
 		<meta name="description" content="{{ page.meta_description }}">{% endif %}{% if page.meta_keywords %}
 		<meta name="keywords" content="{{ page.meta_keywords }}">{% endif %}
 		<meta name="author" content="Andrew Disley, Simplified http://simplified.co.uk/">
-		<link href="/assets/styles/screen.css" media="screen,projection" rel="stylesheet" type="text/css">
-		<!--[if lte IE 7]><link href="/assets/styles/ie.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
-		<link href="/assets/styles/print.css" media="print" rel="stylesheet" type="text/css">
-		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<link href="{{ site.assets_url }}styles/screen.css" media="screen,projection" rel="stylesheet" type="text/css">
+		<!--[if lte IE 7]><link href="{{ site.assets_url }}styles/ie.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
+		<link href="{{ site.assets_url }}styles/print.css" media="print" rel="stylesheet" type="text/css">
+		<link href="{{ site.url }}favicon.ico" rel="shortcut icon" type="image/x-icon">
 	</head>
 	<!-- TODO add post ID to body class -->
-	<body{% if page.section %} class="{{ page.section }}"{% endif %} id="geekup-org">
-		<script type="text/javascript">document.body.className += ' hasJS';</script>
+	<body{% if page.section %} class="{{ page.section }}"{% endif %} id="{{ site.id }}">
 		<div id="Container">
 			<div id="Branding">
-				<p id="BrandingTitle"><strong><img alt="GeekUp" height="70" src="//geekup.org/assets/images/global/branding_logo.gif" width="250" /></strong> grassroot geekery in the UK.</p>
+				<p id="BrandingTitle"><strong><img alt="GeekUp" height="70" src="{{ site.assets_url }}images/global/branding_logo.gif" width="250"></strong> grassroot geekery in the UK.</p>
 			</div>
 			<div class="clearfix" id="NavigationPrimary">
 				<ul>
-					<li class="nphome first"><a href="/">Home</a></li>
-					<li class="npabout"><a href="/about/">About</a></li>
-					<li class="npevents"><a href="/events/">Events</a></li>
+					<li class="nphome first"><a href="{{ site.url }}">Home</a></li>
+					<li class="npabout"><a href="{{ site.url }}about/">About</a></li>
+					<li class="npevents"><a href="{{ site.url }}events/">Events</a></li>
 					<li class="npjobboard"><a class="external" href="http://jobboard.geekup.org/">Job Board</a></li>
-					<li class="npwiki"><a href="/wiki/">Wiki</a></li>
+					<li class="npwiki"><a href="{{ site.url }}wiki/">Wiki</a></li>
 				</ul>
 			</div>
 {{ content }}
@@ -33,25 +32,26 @@
 				<div id="OurFriends">
 					<h3>Our Friends</h3>
 					<ul>
-						<li><a href="http://jobboard.geekup.org/" rel="external"><img alt="GeekUp Job Board - Web industry jobs in the UK's North-West" height="50" src="/assets/images/global/jobboard-240x100.gif" width="120" /></a></li>
-						<li><a href="http://www.manchesterdda.com/" rel="external"><img alt="Manchester Digital Development Agency" height="50" src="/assets/images/global/mdda-240x100.gif" width="120" /></a></li>
-						<li><a href="http://nwrug.org/" rel="external"><img alt="North West Ruby User Group" height="50" src="/assets/images/global/nwrug-240x100.gif" width="120" /></a></li>
-						<li><a href="http://www.techcelerate.org/" rel="external"><img alt="Techcelerate" height="50" src="/assets/images/global/nws2-240x100.png" width="120" /></a></li>
-						<li><a href="http://phpnw.org.uk/" rel="external"><img alt="PHP North West User Group" height="50" src="/assets/images/global/phpnw-240x100.png" width="120" /></a></li>
-						<li><a href="http://manchester.vbug.net/" rel="external"><img alt="Manchester .NET User Group" height="50" src="/assets/images/global/vbug-240x100.gif" width="120" /></a></li>
+						<li><a href="http://jobboard.geekup.org/" rel="external"><img alt="GeekUp Job Board - Web industry jobs in the UK's North-West" height="50" src="{{ site.assets_url }}images/global/jobboard-240x100.gif" width="120"></a></li>
+						<li><a href="http://www.manchesterdda.com/" rel="external"><img alt="Manchester Digital Development Agency" height="50" src="{{ site.assets_url }}images/global/mdda-240x100.gif" width="120"></a></li>
+						<li><a href="http://nwrug.org/" rel="external"><img alt="North West Ruby User Group" height="50" src="{{ site.assets_url }}images/global/nwrug-240x100.gif" width="120"></a></li>
+						<li><a href="http://www.techcelerate.org/" rel="external"><img alt="Techcelerate" height="50" src="{{ site.assets_url }}images/global/nws2-240x100.png" width="120"></a></li>
+						<li><a href="http://phpnw.org.uk/" rel="external"><img alt="PHP North West User Group" height="50" src="{{ site.assets_url }}images/global/phpnw-240x100.png" width="120"></a></li>
+						<li><a href="http://manchester.vbug.net/" rel="external"><img alt="Manchester .NET User Group" height="50" src="{{ site.assets_url }}images/global/vbug-240x100.gif" width="120"></a></li>
 					</ul>
 				</div>
-				<p class="legal">&copy; GeekUp, 2006 - 2010. All rights reserved. <a href="/about/credits/">Credits</a>.</p>
+				<p class="legal">&copy; GeekUp, 2006 - 2011. All rights reserved. <a href="{{ site.url }}about/credits/">Credits</a>.</p>
 			</div>
-		</div>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-		<script src="/assets/scripts/global.js" type="text/javascript"></script>
+		</div>{% if site.env == 'production' %}
 		<script type="text/javascript">
-			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-		<script type="text/javascript">
-			var pageTracker = _gat._getTracker("UA-78380-4");pageTracker._initData();pageTracker._trackPageview();
-		</script>
+			var _gaq = [['_setAccount', '{{ site.google_analytics_id }}'], ['_trackPageview']];
+			(function(d, t) {
+				var g = d.createElement(t),
+				s = d.getElementsByTagName(t)[0];
+				g.async = true;
+				g.src = '//www.google-analytics.com/ga.js';
+				s.parentNode.insertBefore(g, s);
+			})(document, 'script');
+		</script>{% endif %}
 	</body>
 </html>

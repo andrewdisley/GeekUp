@@ -1,6 +1,22 @@
-#auto: true
-destination: _site
+# Simplified: Front-End Skeleton
+# http://github.com/andrewdisley/Front-End-Skeleton
+
+# http://wiki.github.com/mojombo/jekyll/permalinks
 permalink: /:categories/:title
-#url: http://geekup.org
-#assets_url: http://geekup.org
-exclude: ['Rakefile', 'capfile', 'capistrano', 'geekup.ics', 'README']
+
+# Configure Title, ID, Domain, URLs and Google Analytics ID
+title: "GeekUp"
+id: geekup-org
+domain: geekup.org
+url: /
+assets_url: /assets/
+google_analytics_id: UA-78380-4
+
+# Set environment
+# development, staging, production
+env: production
+
+# Cache buster
+#assets_cache_buster:
+
+exclude: ['Rakefile', 'geekup.ics', 'README']

@@ -40,10 +40,15 @@
 						<li><a href="http://manchester.vbug.net/" rel="external"><img alt="Manchester .NET User Group" height="50" src="{{ site.assets_url }}images/global/vbug-240x100.gif" width="120"></a></li>
 					</ul>
 				</div>
-				<p class="legal">&copy; GeekUp, 2006 - 2011. All rights reserved. <a href="{{ site.url }}about/credits/">Credits</a>.</p>
+				<p class="legal">Copyright &#169; {{ 'now' | date: "%Y" }} GeekUp. All rights reserved. <a href="{{ site.url }}about/credits/">Credits</a>.</p>
 			</div>
 		</div>{% if site.env == 'production' %}
-		<script type="text/javascript">
+		<script src="http://include.reinvigorate.net/re_.js"></script>
+		<script>
+			try {
+				reinvigorate.url_filter = function (url) { return url; }
+				reinvigorate.track("m6s0j-yq301h076h");
+			} catch(err) {}
 			var _gaq = [['_setAccount', '{{ site.google_analytics_id }}'], ['_trackPageview']];
 			(function(d, t) {
 				var g = d.createElement(t),

@@ -17,7 +17,7 @@ meta_keywords:
 				</ul>
 				<h2>Previous Events</h2>
 				<ul>
-					{% for post in site.categories.events %}{% unless post.categories contains 'upcoming' %}<li><a href="{{ post.url }}">{{ post.title }} - {{ post.date | date: "%B %d %Y" }}</a></li>{% endunless %}
+					{% for post in site.categories.events %}{% unless post.upcomingevent %}<li><a href="{{ post.url }}">{{ post.title }} - {{ post.date | date: "%B %d %Y" }}</a></li>{% endunless %}
 					{% endfor %}
 				</ul>
 			</div>

@@ -10,7 +10,7 @@ meta_keywords:
 			<div id="Content">
 				<h1>GeekUp Events</h1>
 				<p>GeekUp's are free to attend. Each event is different some are purely social and some have talks but you'll definitely find beer and a good ole geeky chat.</p>
-				<p>Events take place in <strong>Chester</strong>, <strong>Doncaster</strong>, <strong>Grimsby (East Coast)</strong>, <strong>Hebden Bridge</strong>, <strong>Lancaster</strong>, <strong>Leeds</strong>, <strong>Liverpool</strong>, <strong>Manchester</strong>, <strong>Nottingham</strong>, <strong>Preston</strong>, <strong>Sheffield</strong> and <strong>Staffs</strong>.</p>
+				<p>Events take place in <strong>Blackpool</strong>, <strong>Doncaster</strong>, <strong>Grimsby (East Coast)</strong>, <strong>Hebden Bridge</strong>, <strong>Lancaster</strong>, <strong>Leeds</strong>, <strong>Liverpool</strong>, <strong>Manchester</strong>, <strong>Nottingham</strong>, <strong>Preston</strong>, <strong>Sheffield</strong> and <strong>Staffs</strong>.</p>
 				<h2>Upcoming Events</h2>
 				<ul>
 					{% for post in site.categories.events reversed %}{% if post.upcomingevent %}<li><a href="{{ post.url }}">{{ post.title }} - {{ post.date | date: "%B %d %Y" }}</a></li>{% endif %}{% endfor %}

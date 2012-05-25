@@ -1,35 +1,35 @@
-			<div id="Sidebar">
-				<div id="Events">
-					<h2><a href="/events/">Upcoming Events</a></h2>
-					{% for post in site.categories.events reversed %}{% if post.upcomingevent %}<div class="vevent">
-						<h3><a href="{{ post.url }}/"><strong>{{ post.title }} - {{ post.date | date: "%H:%M %a %b %d %Y" }}</strong> <span class="location">{{ post.location }}</span></a></h3>
-					</div>{% endif %}{% endfor %}
-				</div>
-				<div id="GeekR">
-					<h2><a href="http://flickr.com/groups/geekup/" rel="external">geek<span>r</span> - GeekUp Flickr</a></h2>{% comment %}
-					<ul class="clearfix">
-						<li><a href="http://flickr.com/photos/27245805@N00/4168441033/in/pool-geekup/"><img alt="USB cat!" height="50" src="http://farm3.static.flickr.com/2496/4168441033_21dd828568_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4068291371/in/pool-geekup/"><img alt="BarCampRock" height="50" src="http://farm3.static.flickr.com/2657/4068291371_93052d4ed0_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4069046638/in/pool-geekup/"><img alt="Jason" height="50" src="http://farm3.static.flickr.com/2725/4069046638_275397b3e7_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4068291611/in/pool-geekup/"><img alt="BcBlackpoolSchwag" height="50" src="http://farm3.static.flickr.com/2631/4068291611_7842a196a0_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4068291993/in/pool-geekup/"><img alt="Jedw" height="50" src="http://farm4.static.flickr.com/3486/4068291993_41c9dde11e_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4068292345/in/pool-geekup/"><img alt="MartinRue" height="50" src="http://farm4.static.flickr.com/3480/4068292345_852c1d3307_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4068292165/in/pool-geekup/"><img alt="JoshRock" height="50" src="http://farm4.static.flickr.com/3482/4068292165_701200cd4f_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4010503769/in/pool-geekup/"><img alt="Caz" height="50" src="http://farm4.static.flickr.com/3526/4010503769_b5a6044a97_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4010503689/in/pool-geekup/"><img alt="Andrew" height="50" src="http://farm4.static.flickr.com/3497/4010503689_0542b13f7a_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4010503931/in/pool-geekup/"><img alt="Ed" height="50" src="http://farm4.static.flickr.com/3525/4010503931_cbae22665e_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4010503849/in/pool-geekup/"><img alt="Dan" height="50" src="http://farm3.static.flickr.com/2458/4010503849_20131c832b_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4011269680/in/pool-geekup/"><img alt="Kerry" height="50" src="http://farm3.static.flickr.com/2524/4011269680_b21314e089_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4011269606/in/pool-geekup/"><img alt="Fiona" height="50" src="http://farm3.static.flickr.com/2645/4011269606_565c08038c_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4011269722/in/pool-geekup/"><img alt="Kian" height="50" src="http://farm3.static.flickr.com/2493/4011269722_b19b7b56e7_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4010504191/in/pool-geekup/"><img alt="Paul" height="50" src="http://farm3.static.flickr.com/2538/4010504191_08bc2c50e2_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4011269916/in/pool-geekup/"><img alt="PlipHides" height="50" src="http://farm3.static.flickr.com/2474/4011269916_437f1c3e84_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4011269852/in/pool-geekup/"><img alt="Plip" height="50" src="http://farm4.static.flickr.com/3512/4011269852_ed4f84e9aa_s.jpg" width="50"></a></li>
-						<li><a href="http://flickr.com/photos/37776193@N00/4011270006/in/pool-geekup/"><img alt="Tim" height="50" src="http://farm3.static.flickr.com/2609/4011270006_c1c0aefde7_s.jpg" width="50"></a></li>
-					</ul>{% endcomment %}
-				</div>{% comment %}
-				<div id="Contact">
-					<h2>Contact</h2>
-					<p>If you need further information, e-mail <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#103;&#101;&#101;&#107;&#117;&#112;&#046;&#111;&#114;&#103;">&#105;&#110;&#102;&#111;&#064;&#103;&#101;&#101;&#107;&#117;&#112;&#046;&#111;&#114;&#103;</a></p>
-				</div>{% endcomment %}
-			</div>
+<div id="Sidebar">
+<div id="Events">
+<h2><a href="/events/">Upcoming Events</a></h2>
+{% for post in site.categories.events reversed %}{% if post.upcomingevent %}<div class="vevent">
+<h3><a href="{{ post.url }}/"><strong>{{ post.title }} - {{ post.date | date: "%H:%M %a %b %d %Y" }}</strong> <span class="location">{{ post.location }}</span></a></h3>
+</div>{% endif %}{% endfor %}
+</div>
+<div id="GeekR">
+<h2><a href="http://flickr.com/groups/geekup/" rel="external">geek<span>r</span> - GeekUp Flickr</a></h2>{% comment %}
+<ul class="clearfix">
+<li><a href="http://flickr.com/photos/27245805@N00/4168441033/in/pool-geekup/"><img alt="USB cat!" height="50" src="http://farm3.static.flickr.com/2496/4168441033_21dd828568_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4068291371/in/pool-geekup/"><img alt="BarCampRock" height="50" src="http://farm3.static.flickr.com/2657/4068291371_93052d4ed0_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4069046638/in/pool-geekup/"><img alt="Jason" height="50" src="http://farm3.static.flickr.com/2725/4069046638_275397b3e7_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4068291611/in/pool-geekup/"><img alt="BcBlackpoolSchwag" height="50" src="http://farm3.static.flickr.com/2631/4068291611_7842a196a0_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4068291993/in/pool-geekup/"><img alt="Jedw" height="50" src="http://farm4.static.flickr.com/3486/4068291993_41c9dde11e_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4068292345/in/pool-geekup/"><img alt="MartinRue" height="50" src="http://farm4.static.flickr.com/3480/4068292345_852c1d3307_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4068292165/in/pool-geekup/"><img alt="JoshRock" height="50" src="http://farm4.static.flickr.com/3482/4068292165_701200cd4f_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4010503769/in/pool-geekup/"><img alt="Caz" height="50" src="http://farm4.static.flickr.com/3526/4010503769_b5a6044a97_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4010503689/in/pool-geekup/"><img alt="Andrew" height="50" src="http://farm4.static.flickr.com/3497/4010503689_0542b13f7a_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4010503931/in/pool-geekup/"><img alt="Ed" height="50" src="http://farm4.static.flickr.com/3525/4010503931_cbae22665e_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4010503849/in/pool-geekup/"><img alt="Dan" height="50" src="http://farm3.static.flickr.com/2458/4010503849_20131c832b_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4011269680/in/pool-geekup/"><img alt="Kerry" height="50" src="http://farm3.static.flickr.com/2524/4011269680_b21314e089_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4011269606/in/pool-geekup/"><img alt="Fiona" height="50" src="http://farm3.static.flickr.com/2645/4011269606_565c08038c_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4011269722/in/pool-geekup/"><img alt="Kian" height="50" src="http://farm3.static.flickr.com/2493/4011269722_b19b7b56e7_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4010504191/in/pool-geekup/"><img alt="Paul" height="50" src="http://farm3.static.flickr.com/2538/4010504191_08bc2c50e2_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4011269916/in/pool-geekup/"><img alt="PlipHides" height="50" src="http://farm3.static.flickr.com/2474/4011269916_437f1c3e84_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4011269852/in/pool-geekup/"><img alt="Plip" height="50" src="http://farm4.static.flickr.com/3512/4011269852_ed4f84e9aa_s.jpg" width="50"></a></li>
+<li><a href="http://flickr.com/photos/37776193@N00/4011270006/in/pool-geekup/"><img alt="Tim" height="50" src="http://farm3.static.flickr.com/2609/4011270006_c1c0aefde7_s.jpg" width="50"></a></li>
+</ul>{% endcomment %}
+</div>{% comment %}
+<div id="Contact">
+<h2>Contact</h2>
+<p>If you need further information, e-mail <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#103;&#101;&#101;&#107;&#117;&#112;&#046;&#111;&#114;&#103;">&#105;&#110;&#102;&#111;&#064;&#103;&#101;&#101;&#107;&#117;&#112;&#046;&#111;&#114;&#103;</a></p>
+</div>{% endcomment %}
+</div>

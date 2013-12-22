@@ -44,6 +44,8 @@ div#Content h1 + p { padding-top: 0; }
 div#Content h2 { font-size: 1.125em; }
 div#Content p + h2 { margin-top: 10px; }
 
+div#Content div.speakerdesc{ font-size: 0.8em; font-style:italic; letter-spacing: -0.05em; }
+
 div#Content div#Connect { background-color: #f8f8f8; border: 1px solid #FFC266; border-top: 2px solid #ff9900; margin: 10px 0 0 0; padding: 10px; }
 div#Content div#Connect legend { padding: 5px 0; }
 div#Content div#Connect div.row { clear: both; padding: 5px 0; }

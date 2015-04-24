@@ -20,6 +20,10 @@ section: events events-detail
 					<dt>Attending?</dt>
 					<dd>Lets us know on Lanyrd <a href="{{ page.lanyrd }}">{{ page.lanyrd }}</a></dd>
 {% endif %}
+{% if page.meetup %}
+					<dt>Attending?</dt>
+					<dd><a href="{{ page.meetup }}">RSVP on MeetUp</a></dd>
+{% endif %}
 {% if page.upcoming %}
 					<dt>Upcoming</dt>
 					<dd><a href="http://upcoming.yahoo.com/event/{{ page.upcoming }}/">http://upcoming.yahoo.com/event/{{ page.upcoming }}/</a></dd>

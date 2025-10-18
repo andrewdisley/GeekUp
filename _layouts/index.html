@@ -43,12 +43,8 @@
 				<p>The GeekUp website is maintained <a href="http://simplified.co.uk/"><span class="s-h-o">Manchester digital freelancer </span>Andrew Disley</a></p>
 			</div>
 		</div>{% if site.env == 'production' %}
-		<script src="http://include.reinvigorate.net/re_.js"></script>
 		<script>
-			try {
-				reinvigorate.url_filter = function (url) { return url; }
-				reinvigorate.track("m6s0j-yq301h076h");
-			} catch(err) {}
+			
 			var _gaq = [['_setAccount', '{{ site.google_analytics_id }}'], ['_trackPageview']];
 			(function(d, t) {
 				var g = d.createElement(t),

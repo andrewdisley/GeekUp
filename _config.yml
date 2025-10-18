@@ -12,6 +12,9 @@ url: https://geekup.org
 assets_url: /assets/
 google_analytics_id: UA-78380-4
 
+# Show future posts
+future: true
+
 # Set environment
 # development, staging, production
 env: production

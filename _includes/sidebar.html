@@ -4,6 +4,11 @@
 {% for post in site.categories.events reversed %}{% if post.upcomingevent %}<div class="vevent">
 <h3><a href="{{ post.url | absolute_url }}"><strong>{{ post.title }} - {{ post.date | date: "%H:%M %a %b %d %Y" }}</strong> <span class="location">{{ post.location }}</span></a></h3>
 </div>{% endif %}{% endfor %}
+<h2>Previous Events</h2>
+<ul>
+{% for post in site.categories.events limit:20 %}{% unless post.upcomingevent %}<li><a href="{{ post.url | absolute_url }}">{{ post.title }} - {{ post.date | date: "%B %d %Y" }}</a></li>{% endunless %}
+{% endfor %}
+</ul>
 </div>
 <div id="GeekR">
 <h2><a href="http://flickr.com/groups/geekup/" rel="external">geek<span>r</span> - GeekUp Flickr</a></h2>{% comment %}

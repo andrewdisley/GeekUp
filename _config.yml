@@ -10,7 +10,7 @@ id: geekup-org
 domain: geekup.org
 url: https://geekup.org
 assets_url: /assets/
-google_analytics_id: UA-78380-4
+google_ga4_id: G-BLFDV1ZFW9
 
 # Show future posts
 future: true

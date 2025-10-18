@@ -10,7 +10,9 @@
 		<link href="{{ site.assets_url }}styles/screen.css" media="screen,projection" rel="stylesheet" type="text/css">
 		<!--[if lte IE 7]><link href="{{ site.assets_url }}styles/ie.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
 		<link href="{{ site.assets_url }}styles/print.css" media="print" rel="stylesheet" type="text/css">
-		<link href="{{ 'favicon.ico' | absolute_url }}" rel="shortcut icon" type="image/x-icon">
+		<link href="{{ 'favicon.ico' | absolute_url }}" rel="shortcut icon" type="image/x-icon">{% if site.env == 'production' %}
+		<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_ga4_id }}"></script>
+		<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '{{ site.google_ga4_id }}');</script>{% endif %}
 	</head>
 	<body{% if page.section %} class="{{ page.section }}"{% endif %} id="{{ site.id }}">
 		<div id="Container">
@@ -42,17 +44,6 @@
 				<p class="legal">Copyright &#169; {{ 'now' | date: "%Y" }} GeekUp. All rights reserved. <a href="{{ '/about/credits/' | absolute_url }}">Credits</a>.</p>
 				<p>The GeekUp website is maintained <a href="http://simplified.co.uk/"><span class="s-h-o">Manchester digital freelancer </span>Andrew Disley</a></p>
 			</div>
-		</div>{% if site.env == 'production' %}
-		<script>
-			
-			var _gaq = [['_setAccount', '{{ site.google_analytics_id }}'], ['_trackPageview']];
-			(function(d, t) {
-				var g = d.createElement(t),
-				s = d.getElementsByTagName(t)[0];
-				g.async = true;
-				g.src = '//www.google-analytics.com/ga.js';
-				s.parentNode.insertBefore(g, s);
-			})(document, 'script');
-		</script>{% endif %}
+		</div>
 	</body>
 </html>

@@ -1,5 +1,13 @@
-log/*
-tmp/*
+# macOS
 .DS_Store
-.svn
-_site
+
+.bundle/*
+
+# build website
+_site/*
+
+# bundler
+vendor/*
+
+# jekyll cache
+.jekyll-cache/*

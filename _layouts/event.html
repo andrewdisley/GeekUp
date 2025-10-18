@@ -33,6 +33,6 @@ section: events events-detail
 					<dd><a href="http://upcoming.yahoo.com/event/{{ page.upcoming }}/">http://upcoming.yahoo.com/event/{{ page.upcoming }}/</a></dd>
 {% endif %}
 				</dl>
-				<p>Go back to the <a href="/events/">events listings</a>.</p>
+				<p>Go back to the <a href="{{ '/events/' | absolute_url }}">events listings</a>.</p>
 			</div>
 {% include sidebar.html %}

@@ -4,21 +4,21 @@ layout: null
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>{{ site.url }}/</loc>
+		<loc>{{ '/' | absolute_url }}</loc>
 		<lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
 	</url>
 	{% for page in site.pages %}<url>
-		<loc>{{ site.url }}{{ page.url }}</loc>
+		<loc>{{ page.url | absolute_url }}</loc>
 		<lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>
 	{% endfor %}
-	{% for page in site.categories.events %}<url>
-		<loc>{{ site.url }}{{ page.url }}/</loc>
-		<lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+	{% for post in site.categories.events %}<url>
+		<loc>{{ post.url | absolute_url }}</loc>
+		<lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>

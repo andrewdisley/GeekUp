@@ -10,9 +10,8 @@
 		<link href="{{ site.assets_url }}styles/screen.css" media="screen,projection" rel="stylesheet" type="text/css">
 		<!--[if lte IE 7]><link href="{{ site.assets_url }}styles/ie.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
 		<link href="{{ site.assets_url }}styles/print.css" media="print" rel="stylesheet" type="text/css">
-		<link href="{{ site.url }}favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<link href="{{ 'favicon.ico' | absolute_url }}" rel="shortcut icon" type="image/x-icon">
 	</head>
-	<!-- TODO add post ID to body class -->
 	<body{% if page.section %} class="{{ page.section }}"{% endif %} id="{{ site.id }}">
 		<div id="Container">
 			<div id="Branding">
@@ -20,11 +19,11 @@
 			</div>
 			<div class="clearfix" id="NavigationPrimary">
 				<ul>
-					<li class="nphome first"><a href="{{ site.url }}">Home</a></li>
-					<li class="npabout"><a href="{{ site.url }}about/">About</a></li>
-					<li class="npevents"><a href="{{ site.url }}events/">Events</a></li>
+					<li class="nphome first"><a href="{{ '/' | absolute_url }}">Home</a></li>
+					<li class="npabout"><a href="{{ '/about/' | absolute_url }}">About</a></li>
+					<li class="npevents"><a href="{{ '/events/' | absolute_url }}">Events</a></li>
 					<li class="npjobboard"><a class="external" href="http://jobboard.geekup.org/">Job Board</a></li>{% comment %}
-					<li class="npwiki"><a href="{{ site.url }}wiki/">Wiki</a></li>{% endcomment %}
+					<li class="npwiki"><a href="{{ '/wiki/' | absolute_url }}">Wiki</a></li>{% endcomment %}
 				</ul>
 			</div>
 {{ content }}
@@ -40,7 +39,7 @@
 						<li><a href="http://manchester.vbug.net/" rel="external"><img alt="Manchester .NET User Group" height="50" src="{{ site.assets_url }}images/global/vbug-240x100.gif" width="120"></a></li>
 					</ul>
 				</div>
-				<p class="legal">Copyright &#169; {{ 'now' | date: "%Y" }} GeekUp. All rights reserved. <a href="{{ site.url }}about/credits/">Credits</a>.</p>
+				<p class="legal">Copyright &#169; {{ 'now' | date: "%Y" }} GeekUp. All rights reserved. <a href="{{ '/about/credits/' | absolute_url }}">Credits</a>.</p>
 				<p>The GeekUp website is maintained <a href="http://simplified.co.uk/"><span class="s-h-o">Manchester digital freelancer </span>Andrew Disley</a></p>
 			</div>
 		</div>{% if site.env == 'production' %}

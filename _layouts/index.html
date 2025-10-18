@@ -3,7 +3,7 @@
 <html profile="http://gmpg.org/xfn/11" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>{{ page.title }}{% if page.section contains 'jobs-job' %} at {{ page.company }} in {{ page.location }}{% endif %}</title>{% if page.meta_description %}
+		<title>{{ page.title }}{% if page.section contains 'event' %} {{ page.date | date: "%H:%M %A %B %d %Y" }}{% if page.venue %} at {{ page.venue }}{% endif %}{% endif %}{% if page.section contains 'jobs-job' %} at {{ page.company }} in {{ page.location }}{% endif %}</title>{% if page.meta_description %}	
 		<meta name="description" content="{{ page.meta_description }}">{% endif %}{% if page.meta_keywords %}
 		<meta name="keywords" content="{{ page.meta_keywords }}">{% endif %}
 		<meta name="author" content="Andrew Disley, Simplified http://simplified.co.uk/">

@@ -1,27 +1,27 @@
 task :default => :build
 
 def windows?
-  Config::CONFIG['host_os'] =~ /mswin/
+  Gem.win_platform?
 end
 
 desc 'Jekyll build'
 task :build do
-  jekyll
+  jekyll('build')
 end
 
-desc 'Jekyll --auto'
+desc 'Jekyll serve with auto-reload'
 task :auto do
-  jekyll('--auto')
+  jekyll('serve --livereload')
 end
 
-desc 'Jekyll --server --auto'
+desc 'Jekyll serve with auto-reload'
 task :server do
-  jekyll('--server --auto')
+  jekyll('serve --livereload')
 end
 
 desc 'Deploy to live, replaces live server with _site'
 task :live do
-  jekyll
+  jekyll('build')
   sh 'rsync -rtzhv --delete _site/ dhg:/home/sgeekup/sites/geekup.org/public/'
 end
 
@@ -29,8 +29,8 @@ def jekyll(opts = '')
   if windows?
     sh 'rmdir /s /q _site'
     sh 'mkdir _site'
-  elsif
+  else
     sh 'rm -rf _site'
   end
-  sh 'jekyll ' + opts
+  sh "bundle exec jekyll #{opts}"
 end

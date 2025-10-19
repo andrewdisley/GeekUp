@@ -1,49 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
-<html profile="http://gmpg.org/xfn/11" lang="en">
+<!doctype html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{{ page.title }}{% if page.section contains 'event' %} {{ page.date | date: "%H:%M %A %B %d %Y" }}{% if page.venue %} at {{ page.venue }}{% endif %}{% endif %}{% if page.section contains 'jobs-job' %} at {{ page.company }} in {{ page.location }}{% endif %}</title>{% if page.meta_description %}	
 		<meta name="description" content="{{ page.meta_description }}">{% endif %}{% if page.meta_keywords %}
 		<meta name="keywords" content="{{ page.meta_keywords }}">{% endif %}
 		<meta name="author" content="Andrew Disley, Simplified http://simplified.co.uk/">
 		<link href="{{ site.assets_url }}styles/screen.css" media="screen,projection" rel="stylesheet" type="text/css">
-		<!--[if lte IE 7]><link href="{{ site.assets_url }}styles/ie.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
 		<link href="{{ site.assets_url }}styles/print.css" media="print" rel="stylesheet" type="text/css">
-		<link href="{{ 'favicon.ico' | absolute_url }}" rel="shortcut icon" type="image/x-icon">{% if site.env == 'production' %}
+		<link href="{{ 'favicon.ico' | absolute_url }}" rel="shortcut icon" type="image/x-icon">{% comment %}{% if site.env == 'production' %}
 		<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_ga4_id }}"></script>
-		<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '{{ site.google_ga4_id }}');</script>{% endif %}
+		<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '{{ site.google_ga4_id }}');</script>{% endif %}{% endcomment %}
 	</head>
 	<body{% if page.section %} class="{{ page.section }}"{% endif %} id="{{ site.id }}">
-		<div id="Container">
-			<div id="Branding">
-				<p id="BrandingTitle"><strong><img alt="GeekUp" height="70" src="{{ site.assets_url }}images/global/branding_logo.gif" width="250"></strong> grassroot geekery in the UK.</p>
+		<header>
+			<div class="branding">
+				<img alt="GeekUp" class="branding-logo" height="45" src="{{ site.assets_url }}images/global/branding_logo.gif" width="160">
+				<span class="branding-strapline">grassroot geekery in the UK.</span>
 			</div>
-			<div class="clearfix" id="NavigationPrimary">
+			<nav class="nav">
+				<ul class="nav-list">
+					<li class="nav-item nphome first"><a class="nav-link" href="{{ '/' | absolute_url }}">Home</a></li>
+					<li class="nav-item npabout"><a class="nav-link" href="{{ '/about/' | absolute_url }}">About</a></li>
+					<li class="nav-item npevents"><a class="nav-link" href="{{ '/events/' | absolute_url }}">Events</a></li>
+					<li class="nav-item npjobboard"><a class="external nav-link" href="http://jobboard.geekup.org/">Job Board</a></li>{% comment %}
+					<li class="nav-item npwiki"><a class="nav-link" href="{{ '/wiki/' | absolute_url }}">Wiki</a></li>{% endcomment %}
+				</ul>
+			</nav>
+		</header>
+		<main>
+{{ content }}
+		</main>
+		<footer>
+			<div class="footer-friends">
+				<h3>Our Friends</h3>
 				<ul>
-					<li class="nphome first"><a href="{{ '/' | absolute_url }}">Home</a></li>
-					<li class="npabout"><a href="{{ '/about/' | absolute_url }}">About</a></li>
-					<li class="npevents"><a href="{{ '/events/' | absolute_url }}">Events</a></li>
-					<li class="npjobboard"><a class="external" href="http://jobboard.geekup.org/">Job Board</a></li>{% comment %}
-					<li class="npwiki"><a href="{{ '/wiki/' | absolute_url }}">Wiki</a></li>{% endcomment %}
+					<li>{% comment %}<a href="http://jobboard.geekup.org/" rel="external">{% endcomment %}<img alt="GeekUp Job Board - Web industry jobs in the UK's North-West" height="50" src="{{ site.assets_url }}images/global/jobboard-240x100.gif" width="120">{% comment %}</a>{% endcomment %}</li>
+					<li>{% comment %}<a href="http://www.manchesterdda.com/" rel="external">{% endcomment %}<img alt="Manchester Digital Development Agency" height="50" src="{{ site.assets_url }}images/global/mdda-240x100.gif" width="120">{% comment %}</a>{% endcomment %}</li>
+					<li><a href="http://nwrug.org/" rel="external"><img alt="North West Ruby User Group" height="50" src="{{ site.assets_url }}images/global/nwrug-240x100.gif" width="120"></a></li>
+					<li><a href="http://www.techcelerate.org/" rel="external"><img alt="Techcelerate" height="50" src="{{ site.assets_url }}images/global/nws2-240x100.png" width="120"></a></li>
+					<li><a href="http://phpnw.org.uk/" rel="external"><img alt="PHP North West User Group" height="50" src="{{ site.assets_url }}images/global/phpnw-240x100.png" width="120"></a></li>
+					<li>{% comment %}<a href="http://manchester.vbug.net/" rel="external">{% endcomment %}<img alt="Manchester .NET User Group" height="50" src="{{ site.assets_url }}images/global/vbug-240x100.gif" width="120">{% comment %}</a>{% endcomment %}</li>
 				</ul>
 			</div>
-{{ content }}
-			<div id="SiteInfo">
-				<div id="OurFriends">
-					<h3>Our Friends</h3>
-					<ul>
-						<li>{% comment %}<a href="http://jobboard.geekup.org/" rel="external">{% endcomment %}<img alt="GeekUp Job Board - Web industry jobs in the UK's North-West" height="50" src="{{ site.assets_url }}images/global/jobboard-240x100.gif" width="120">{% comment %}</a>{% endcomment %}</li>
-						<li>{% comment %}<a href="http://www.manchesterdda.com/" rel="external">{% endcomment %}<img alt="Manchester Digital Development Agency" height="50" src="{{ site.assets_url }}images/global/mdda-240x100.gif" width="120">{% comment %}</a>{% endcomment %}</li>
-						<li><a href="http://nwrug.org/" rel="external"><img alt="North West Ruby User Group" height="50" src="{{ site.assets_url }}images/global/nwrug-240x100.gif" width="120"></a></li>
-						<li><a href="http://www.techcelerate.org/" rel="external"><img alt="Techcelerate" height="50" src="{{ site.assets_url }}images/global/nws2-240x100.png" width="120"></a></li>
-						<li><a href="http://phpnw.org.uk/" rel="external"><img alt="PHP North West User Group" height="50" src="{{ site.assets_url }}images/global/phpnw-240x100.png" width="120"></a></li>
-						<li>{% comment %}<a href="http://manchester.vbug.net/" rel="external">{% endcomment %}<img alt="Manchester .NET User Group" height="50" src="{{ site.assets_url }}images/global/vbug-240x100.gif" width="120">{% comment %}</a>{% endcomment %}</li>
-					</ul>
-				</div>
-				<p class="legal">Copyright &#169; {{ 'now' | date: "%Y" }} GeekUp. All rights reserved. <a href="{{ '/about/credits/' | absolute_url }}">Credits</a>.</p>
-				<p>The GeekUp website is maintained <a href="http://simplified.co.uk/"><span class="s-h-o">Manchester digital freelancer </span>Andrew Disley</a></p>
-			</div>
-		</div>
+			<p class="footer-legal">Copyright &#169; {{ 'now' | date: "%Y" }} GeekUp. All rights reserved. <a href="{{ '/about/credits/' | absolute_url }}">Credits</a>.</p>
+			<p class="footer-credits">The GeekUp website is maintained <a href="http://simplified.co.uk/"><span class="s-h-o">Manchester digital freelancer </span>Andrew Disley</a></p>
+		</footer>
 	</body>
 </html>

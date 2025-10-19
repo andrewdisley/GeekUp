@@ -11,12 +11,12 @@ end
 
 desc 'Jekyll serve with auto-reload'
 task :auto do
-  jekyll('serve --livereload')
+  jekyll('serve')
 end
 
-desc 'Jekyll serve with auto-reload'
+desc 'Jekyll serve'
 task :server do
-  jekyll('serve --livereload')
+  jekyll('serve')
 end
 
 desc 'Deploy to live, replaces live server with _site'
